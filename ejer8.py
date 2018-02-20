@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#Visualiza todos los shell scripts
- 
+#Introduce una letra por teclado y busca los ficheros que la contengan en el nombre
 import os
 directorio=raw_input('introduce un directorio:')
-if not os.access(directorio,0): 
-	print "El directorio existe"
-	exit()
+
+letra=raw_input('introduce una letra:')
 ficheros=os.listdir(directorio)
 for fichero in ficheros:
-	if fichero[-3:]=='.sh':
+	if fichero.count(letra)>0:
 		print fichero	
 
